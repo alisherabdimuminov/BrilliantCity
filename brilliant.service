@@ -1,0 +1,16 @@
+[Unit]
+Description=Api
+After=syslog.target
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=2s
+MemoryLimit=1G
+User=root
+Group=root
+WorkingDirectory=/root/Api
+ExecStart=/root/Api/venv/bin/fastapi run /root/Api/main.py --host=109.68.212.245 --port=9060
+
+[Install]
+WantedBy=multi-user.target
