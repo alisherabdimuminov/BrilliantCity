@@ -1,4 +1,4 @@
-import uvicorn
+# import uvicorn
 import sqlite3
 from fastapi import FastAPI, Request
 
@@ -82,5 +82,5 @@ async def group_enters_post(request: Request):
     }
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", reload=True)
