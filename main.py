@@ -1,9 +1,19 @@
 # import uvicorn
 import sqlite3
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 db = sqlite3.connect("main.db")
 cursor = db.cursor()
 
